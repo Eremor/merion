@@ -3,6 +3,17 @@
 @import "../../fonts/benzin";
 
 /*
-font-family: 'Montserrat', sans-serif;
 font-family: 'Nunito Sans', sans-serif;
 */
+
+@mixin font-main ($size, $height: 1.6) {
+  font-family: "Montserrat", sans-serif;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin font-title ($size, $height: 1.2) {
+  font-family: "Benzin", sans-serif;
+  font-size: $size;
+  line-height: $height;
+}
