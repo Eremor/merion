@@ -4,10 +4,16 @@ html {
 
 body {
   @include font-main(1rem);
+
   font-weight: 400;
   color: var(--color-dark);
   background-color: var(--color-bg);
 }
+
+// html,
+// body {
+//   overflow-x: hidden;
+// }
 
 a,
 button,
@@ -43,13 +49,25 @@ a {
 
 .hidden-mobile {
   @include mobile {
-    display: none;
+    display: none !important;
   }
 }
 
 .visible-mobile {
   @include mobile-above {
     display: none;
+  }
+}
+
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  @include tablet-above {
+    display: none !important;
   }
 }
 

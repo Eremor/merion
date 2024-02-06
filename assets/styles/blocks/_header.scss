@@ -1,0 +1,28 @@
+.header {
+  background-color: var(--color-light);
+  box-shadow: 0 4px 20px rgba($color: #1f1f1f, $alpha: 0.06);
+
+  &__wrapper {
+    padding-block: 25px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    @include tablet {
+      padding-block: 22px;
+      gap: 20px;
+    }
+
+    @include mobile {
+      padding-block: 24px;
+    }
+  }
+
+  &__nav {
+    flex-grow: 1;
+  }
+
+  &__burger {
+    margin-left: auto;
+  }
+}

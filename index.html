@@ -7,7 +7,79 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header></header>
+  <header class="header">
+    <div class="header__wrapper wrapper">
+      <a class="header__logo logo" href="#">
+        <img width="250" height="50" src="assets/image/logo.svg" alt="Merion">
+      </a>
+      <nav class="header__nav nav">
+        <div class="nav__dropdown dropdown">
+          <button class="dropdown__button button hidden-tablet">
+            Все курсы
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 6.14645C2.84171 5.95118 3.15829 5.95118 3.35355 6.14645L8 10.7929L12.6464 6.14645C12.8417 5.95118 13.1583 5.95118 13.3536 6.14645C13.5488 6.34171 13.5488 6.65829 13.3536 6.85355L8.35355 11.8536C8.15829 12.0488 7.84171 12.0488 7.64645 11.8536L2.64645 6.85355C2.45118 6.65829 2.45118 6.34171 2.64645 6.14645Z" fill="#1F1F1F"/>
+            </svg>              
+          </button>
+          <p class="dropdown__text visible-tablet">Все курсы:</p>
+          <ul class="dropdown__list">
+            <li class="dropdown__item">
+              <a href="#">Базовый курс по Asterisk</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Asterisk PRO</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Сетевые технологии</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Linux</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Базы данных</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">DevOps</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Python</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">QA тестировщик</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Кибербезопасность</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Основы BGP</a>
+            </li>
+            <li class="dropdown__item">
+              <a href="#">Основы SQL</a>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="nav__link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1127_56)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.6107 1.32243C2.33404 1.32243 2.10976 1.54671 2.10976 1.82337V10.2922C2.10976 10.5689 2.33404 10.7932 2.6107 10.7932C4.28934 10.7932 5.93892 11.2312 7.39639 12.0641L7.7475 12.2647L7.74848 12.2653C7.80741 12.2995 7.87159 12.3207 7.93705 12.329C7.98255 12.3347 8.02866 12.3342 8.07406 12.3274C8.13562 12.3182 8.19594 12.2975 8.25149 12.2652L8.25282 12.2644L8.60349 12.0641C10.061 11.2312 11.7105 10.7932 13.3892 10.7932C13.6658 10.7932 13.8901 10.5689 13.8901 10.2922V1.82337C13.8901 1.54671 13.6658 1.32243 13.3892 1.32243C11.5362 1.32243 9.71527 1.806 8.10642 2.72535L7.99994 2.78619L7.89346 2.72535C6.28461 1.806 4.4637 1.32243 2.6107 1.32243ZM3.11164 2.40467V2.33733C4.61628 2.41557 6.0842 2.8454 7.39639 3.59522L7.49898 3.65384V10.8321V10.9797C6.13805 10.2764 4.64145 9.87511 3.11164 9.80307V2.40467ZM8.60349 3.59522C9.91568 2.8454 11.3836 2.41557 12.8882 2.33733V9.80307C11.3584 9.87511 9.86183 10.2764 8.5009 10.9797V3.65384L8.60349 3.59522Z" fill="#1F1F1F"/>
+            <path d="M0.440881 3.63198C0.16422 3.63198 -0.0600586 3.85626 -0.0600586 4.13292V12.2518C-0.0600586 12.5285 0.16422 12.7528 0.440881 12.7528H0.572046C3.08617 12.7528 5.55883 13.3935 7.75657 14.6145C7.83367 14.6573 7.91735 14.6776 7.99987 14.6776C8.08244 14.6777 8.16617 14.6573 8.24331 14.6145C10.4411 13.3935 12.9137 12.7528 15.4278 12.7528H15.559C15.8357 12.7528 16.0599 12.5285 16.0599 12.2518V4.13292C16.0599 3.85626 15.8357 3.63198 15.559 3.63198C15.2823 3.63198 15.0581 3.85626 15.0581 4.13292V11.7552C12.5936 11.8129 10.1763 12.4467 7.99994 13.6063C5.82362 12.4467 3.40629 11.8129 0.941821 11.7552V4.13292C0.941821 3.85626 0.717543 3.63198 0.440881 3.63198Z" fill="#1F1F1F"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_1127_56">
+            <rect width="16" height="16" fill="white"/>
+            </clipPath>
+            </defs>
+          </svg>
+          <span>
+            База знаний
+          </span>
+        </a>
+        <button class="nav__button button">Войти</button>
+      </nav>
+      <button class="header__burger burger visible-tablet">
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
   <main></main>
   <footer></footer>
   <script type="module" src="index.js"></script>

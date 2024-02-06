@@ -1,0 +1,12 @@
+.logo {
+  max-width: 250px;
+  display: block;
+
+  @include tablet {
+    max-width: clamp(182px, #{calc(250 / 1200 * 100)}vw, 250px);
+  }
+
+  @include mobile {
+    max-width: clamp(160px, #{calc(182 / 768 * 100)}vw, 182px);
+  }
+}
