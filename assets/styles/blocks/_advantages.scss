@@ -1,0 +1,41 @@
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include desktop-s {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    @include desktop-s {
+      font-size: clamp(0.75rem, 1.25vw, 1rem);
+    }
+
+    @include mobile {
+      gap: 8px;
+    }
+  }
+
+  &__title {
+    @include font-main(1.75rem, 1.2);
+
+    font-weight: 700;
+
+    @include desktop-s {
+      font-size: clamp(1.5rem, #{calc(28 / 1100 * 100)}vw, 1.75rem);
+    }
+  }
+}

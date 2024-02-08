@@ -1,0 +1,123 @@
+.hero {
+  --image-bg-width: 723px;
+  --image-bg-height: 667px;
+  --image-offset-x: 100px;
+  --advantages-max-width: 884px;
+  --tags-max-width: 735px;
+
+  background-image: url("../assets/image/hero-img-desc.png");
+  background-color: var(--color-light);
+  background-position: calc(100vw / 2 + var(--image-offset-x)) bottom;
+  background-size: var(--image-bg-width) var(--image-bg-height);
+  background-repeat: no-repeat;
+
+  @include desktop-m {
+    --image-offset-x: 173px;
+  }
+
+  @include desktop-s {
+    --image-offset-x: -81px;
+  }
+
+  @include tablet {
+    --image-bg-width: 610px;
+    --image-bg-height: 540px;
+    background-image: url("../assets/image/hero-img-mob.png");
+    background-position: center bottom;
+  }
+
+  @include mobile {
+    --image-bg-width: 328px;
+    --image-bg-height: 290px;
+  }
+
+  &__wrapper {
+    padding-block: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include tablet {
+      padding-top: clamp(56px, #{calc(88 / 1400 * 100)}vw, 88px);
+      padding-bottom: 580px;
+    }
+
+    @include mobile {
+      padding-top: clamp(40px, #{calc(56 / 768 * 100)}vw, 56px);
+      padding-bottom: clamp(314px, #{calc(580 / 1200 * 100)}vw, 580px);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 64px;
+    max-width: 850px;
+
+    @include font-title(4.5rem, 1.1);
+
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @include desktop-s {
+      margin-bottom: clamp(40px, #{calc(64 / 1400 * 100)}vw, 64px);
+      font-size: clamp(3.5rem, #{calc(72 / 1200 * 100)}vw, 4.5rem);
+    }
+
+    @include tablet {
+      margin-bottom: clamp(24px, #{calc(40 / 768 * 100)}vw, 40px);
+      min-width: 100%;
+      font-size: clamp(1.75rem, 5.5vw, 3.5rem);
+      line-height: 1.2;
+    }
+
+    span {
+      white-space: nowrap;
+
+      @include tablet {
+        white-space: normal;
+      }
+
+      @include mobile {
+        white-space: nowrap;
+      }
+
+      @media screen and (max-width: 423px) {
+        white-space: normal;
+      }
+    }
+  }
+
+  &__advantages {
+    margin-bottom: 64px;
+    max-width: var(--advantages-max-width);
+    gap: 48px;
+
+    @include desktop-s {
+      --advantages-max-width: 400px;
+      margin-bottom: clamp(40px, #{calc(64 / 1400 * 100)}vw, 64px);
+      gap: 36px;
+    }
+
+    @include tablet {
+      --advantages-max-width: 100%;
+      margin-bottom: clamp(24px, #{calc(40 / 768 * 100)}vw, 40px);
+      gap: 24px;
+    }
+
+    @include mobile {
+      gap: clamp(24px, 5.5vw, 62px);
+    }
+  }
+
+  &__tags {
+    max-width: var(--tags-max-width);
+
+    @include desktop-s {
+      --tags-max-width: 420px;
+    }
+
+    @include tablet {
+      --tags-max-width: 100%;
+    }
+  }
+}

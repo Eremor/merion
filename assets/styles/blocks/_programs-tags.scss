@@ -1,0 +1,27 @@
+.programs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &__item {
+    padding: 8px 16px;
+
+    @include font-main(1rem, 1.4);
+
+    font-weight: 500;
+    background-color: var(--color-light);
+    border: 1.5px solid var(--color-dark);
+    border-radius: var(--border-radius-high);
+
+    @include hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    &:active {
+      color: var(--color-light);
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+  }
+}

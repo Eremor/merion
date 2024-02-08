@@ -402,6 +402,7 @@ svg * {
   --color-dark: #1f1f1f;
   --color-border: #dbdbdb;
   --border-radius: 56px;
+  --border-radius-high: 200px;
   --border-radius-small: 16px;
   --wrapper-width: 1312px;
   --wrapper-padding-x: 48px;
@@ -459,6 +460,11 @@ a {
   max-width: calc(var(--wrapper-width) + var(--wrapper-padding-x) * 2);
   margin-inline: auto;
   padding-inline: var(--wrapper-padding-x);
+}
+@media screen and (max-width: 423px) {
+  .wrapper {
+    padding-inline: clamp(12px, 5.5vw, var(--wrapper-padding-x));
+  }
 }
 
 .visually-hidden {
@@ -672,16 +678,16 @@ a {
     position: absolute;
     top: 0;
     right: 0;
-    padding-block: 60px;
+    padding-top: 60px;
     padding-inline: clamp(48px, 13.0208333333vw, 100px);
     width: 100%;
-    height: 100%;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: clamp(15px, 5.5vw, 30px);
     background-color: var(--color-light);
     opacity: 0;
+    z-index: -1;
     transition: opacity var(--transition-duration);
   }
 }
@@ -718,9 +724,91 @@ a {
 }
 .nav--open {
   opacity: 1;
+  z-index: 9;
+}
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 1200px) {
+  .advantages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 1023px) {
+  .advantages {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.advantages__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+@media screen and (max-width: 1200px) {
+  .advantages__item {
+    font-size: clamp(0.75rem, 1.25vw, 1rem);
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantages__item {
+    gap: 8px;
+  }
+}
+.advantages__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+@media screen and (max-width: 1200px) {
+  .advantages__title {
+    font-size: clamp(1.5rem, 2.5454545455vw, 1.75rem);
+  }
+}
+
+.programs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.programs-tags__item {
+  padding: 8px 16px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 500;
+  background-color: var(--color-light);
+  border: 1.5px solid var(--color-dark);
+  border-radius: var(--border-radius-high);
+}
+@media (hover: hover) {
+  .programs-tags__item:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .programs-tags__item:active {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}
+.programs-tags__item:active {
+  color: var(--color-light);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .header {
+  position: relative;
   background-color: var(--color-light);
   box-shadow: 0 4px 20px rgba(31, 31, 31, 0.06);
 }
@@ -746,4 +834,138 @@ a {
 }
 .header__burger {
   margin-left: auto;
+}
+
+.hero {
+  --image-bg-width: 723px;
+  --image-bg-height: 667px;
+  --image-offset-x: 100px;
+  --advantages-max-width: 884px;
+  --tags-max-width: 735px;
+  background-image: url("../assets/image/hero-img-desc.png");
+  background-color: var(--color-light);
+  background-position: calc(50vw + var(--image-offset-x)) bottom;
+  background-size: var(--image-bg-width) var(--image-bg-height);
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1400px) {
+  .hero {
+    --image-offset-x: 173px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .hero {
+    --image-offset-x: -81px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .hero {
+    --image-bg-width: 610px;
+    --image-bg-height: 540px;
+    background-image: url("../assets/image/hero-img-mob.png");
+    background-position: center bottom;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero {
+    --image-bg-width: 328px;
+    --image-bg-height: 290px;
+  }
+}
+.hero__wrapper {
+  padding-block: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media screen and (max-width: 1023px) {
+  .hero__wrapper {
+    padding-top: clamp(56px, 6.2857142857vw, 88px);
+    padding-bottom: 580px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero__wrapper {
+    padding-top: clamp(40px, 7.2916666667vw, 56px);
+    padding-bottom: clamp(314px, 48.3333333333vw, 580px);
+  }
+}
+.hero__title {
+  margin: 0;
+  margin-bottom: 64px;
+  max-width: 850px;
+  font-family: "Benzin", sans-serif;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1200px) {
+  .hero__title {
+    margin-bottom: clamp(40px, 4.5714285714vw, 64px);
+    font-size: clamp(3.5rem, 6vw, 4.5rem);
+  }
+}
+@media screen and (max-width: 1023px) {
+  .hero__title {
+    margin-bottom: clamp(24px, 5.2083333333vw, 40px);
+    min-width: 100%;
+    font-size: clamp(1.75rem, 5.5vw, 3.5rem);
+    line-height: 1.2;
+  }
+}
+.hero__title span {
+  white-space: nowrap;
+}
+@media screen and (max-width: 1023px) {
+  .hero__title span {
+    white-space: normal;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero__title span {
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 423px) {
+  .hero__title span {
+    white-space: normal;
+  }
+}
+.hero__advantages {
+  margin-bottom: 64px;
+  max-width: var(--advantages-max-width);
+  gap: 48px;
+}
+@media screen and (max-width: 1200px) {
+  .hero__advantages {
+    --advantages-max-width: 400px;
+    margin-bottom: clamp(40px, 4.5714285714vw, 64px);
+    gap: 36px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .hero__advantages {
+    --advantages-max-width: 100%;
+    margin-bottom: clamp(24px, 5.2083333333vw, 40px);
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero__advantages {
+    gap: clamp(24px, 5.5vw, 62px);
+  }
+}
+.hero__tags {
+  max-width: var(--tags-max-width);
+}
+@media screen and (max-width: 1200px) {
+  .hero__tags {
+    --tags-max-width: 420px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .hero__tags {
+    --tags-max-width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
