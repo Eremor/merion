@@ -1,0 +1,110 @@
+.programs {
+
+  &__wrapper {
+    padding-block: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include tablet {
+      padding-block: clamp(80px, #{calc(120 / 1200 * 100)}vw, 120px);
+    }
+
+    @include mobile {
+      padding-block: clamp(48px, #{calc(80 / 768 * 100)}vw, 80px);
+    }
+  }
+
+  &__top {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include tablet {
+      margin-bottom: clamp(24px, #{calc(40 / 1400 * 100)}vw, 40px);
+      gap: clamp(16px, #{calc(24 / 1200 * 100)}vw, 24px);
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+
+    @include desktop-s {
+      font-size: clamp(1.25rem, 2.3vw, 1.5rem);
+    }
+
+    @include mobile {
+      font-size: clamp(1rem, 2.3vw, 1.25rem);
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-self: center;
+    gap: 24px;
+
+    @include tablet {
+      margin-bottom: clamp(24px, #{calc(40 / 1400 * 100)}vw, 40px);
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(16px, #{calc(24 / 1200 * 100)}vw, 24px);
+    }
+
+    @include mobile {
+      grid-template-columns: fit-content(328px);
+      gap: clamp(8px, #{calc(16 / 768 * 100)}vw, 16px);
+    }
+  }
+
+  &__item {
+
+    @include tablet {
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      &:nth-child(n + 5) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: underline;
+
+    @include hover {
+      color: var(--color-link-hover);
+    }
+
+    &:active {
+      color: var(--color-accent-active);
+    }
+
+    @include tablet {
+      padding: 16px 32px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--border-radius-small);
+
+      @include hover {
+        color: var(--color-link-hover);
+        border-color: var(--color-link-hover);
+      }
+    }
+
+    @include mobile {
+      align-self: stretch;
+      text-align: center;
+    }
+  }
+}

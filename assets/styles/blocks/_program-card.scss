@@ -1,0 +1,98 @@
+.program-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+
+  @include hover {
+    border-color: var(--color-accent);
+
+    .program-card__title {
+      color: var(--color-accent);
+    }
+  }
+
+  &:active {
+    border-color: var(--color-accent-active);
+
+    .program-card__title {
+      color: var(--color-accent-active);
+    }
+  }
+
+  @include tablet {
+    padding: clamp(24px, #{calc(40 / 1300 * 100)}vw, 40px);
+  }
+
+  &__top {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &__tag-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    @include desktop-s {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__tag {
+    padding-block: 8px;
+    padding-left: 24px;
+    padding-right: 10px;
+
+    @include font-main(0.75rem, 1.1);
+    
+    background-color: var(--color-bg);
+    background-size: 13px 13px;
+    background-position: 6px center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+
+    &--level {
+      background-image: url("../assets/image/dumbbell-icon.png");
+    }
+
+    &--time {
+      background-image: url("../assets/image/time-icon.svg");
+    }
+  }
+
+  &__icon {
+    margin-block: -7px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    @include font-main(1.5rem, 1.2);
+
+    font-weight: 700;
+
+    @include tablet {
+      font-size: clamp(1.25rem, 2.3vw, 1.5rem);
+    }
+  }
+
+  &__desc {
+    margin-bottom: auto;
+
+    @include tablet {
+      font-size: clamp(0.875rem, 2.3vw, 1rem);
+    }
+  }
+}
