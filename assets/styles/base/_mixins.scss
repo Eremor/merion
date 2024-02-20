@@ -39,3 +39,7 @@
     }
   }
 }
+
+@mixin color-gradient($firstColor, $secondColor) {
+  background: linear-gradient(226deg, $firstColor 0%, $secondColor 100%);
+}
